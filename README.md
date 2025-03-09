@@ -76,7 +76,7 @@ Welcome to our Flight Fare Forecasting project! This repository explores predict
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/your-username/flight-fare-forecasting.git
+   git clone https://github.com/nikopastore/flight-fare-forecasting.git
    cd flight-fare-forecasting
 2. **Download the Dataset**
 
