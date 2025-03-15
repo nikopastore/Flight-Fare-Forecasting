@@ -92,7 +92,7 @@ Welcome to our Flight Fare Forecasting project! This repository explores predict
   - Distribution of base fares vs. total fares, flight counts across different airports, seat availability, and ratio analysis.
 - **Models & Techniques:**  
   - **Linear Regression & Random Forest** for baseline modeling.  
-  - **Gradient Boosting (XGBoost and CatBoost)** for improved accuracy with structured data.  
+  - **Gradient Boosting (XGBoost, LightGBM, CatBoost)** for improved accuracy with structured data.  
   - **Distributed Training** (Dask + XGBoost on GPU) for scalability on large datasets.
 
 ### Current Findings
@@ -127,16 +127,12 @@ unzip flightprices.zip
 - **Key Libraries:**
   - `pyspark`
   - `xgboost` (with GPU support if available)
+  - `catboost`
   - `dask[complete]` (for distributed operations)
   - `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`
 - **GPU Acceleration:** Ensure you have CUDA-compatible drivers and the correct version of XGBoost.
 
-### 4. Running the Notebooks
-
-- **Single_Model_Framework/** notebooks provide a step-by-step approach to data preparation, visualization, and model training.
-  - Update file paths as needed before running.
-
-- **Multiple_Model_Framework/** notebooks contain additional model frameworks with partitioned training data.
+> **Note:** If you prefer to work with Google Colab, most notebooks can be executed on a regular CPU (preferably with high RAM). However, the XGBoost and CatBoost notebooks require a TPU or GPU environment for proper execution.
 
 ---
 
