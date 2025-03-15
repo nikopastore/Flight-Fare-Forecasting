@@ -46,24 +46,27 @@ Welcome to our Flight Fare Forecasting project! This repository explores predict
         Milestone 1 - Jan 20 - Project Abstract.pdf
         Milestone 2 - Feb 2 - 1st Progress Report.pdf
         Milestone 3 Slides - Feb 24 - 2nd Progress Report.pptx
-
 ```
 
-1. **milestones/**  
-   - **Milestone 1 - Project Abstract.pdf**  
-     A high-level overview of the project’s background, motivation, and initial approach.  
-   - **Milestone 2 - 1st Progress Report.pdf**  
-     More in-depth details on the data pipeline, early exploratory analyses, and the first modeling attempts.  
+### Folders and Contents
 
-2. **notebooks/**  
-   - **01 Data Ingestion and Preprocessing.ipynb**  
-     Demonstrates how to ingest the dataset (using both Pandas and PySpark), handle missing values, clean and format columns, and save the preprocessed data for downstream tasks.  
-   - **02 EDA and Visualization.ipynb**  
-     Explores key features of the dataset: airport distributions, fare breakdowns, and initial univariate and bivariate trends. Showcases plotting flight counts, analyzing base fare vs. total fare, and investigating boolean features such as basic economy and non-stop.  
-   - **03 Modeling and Evaluation.ipynb**  
-     Builds upon the processed dataset to train and evaluate initial models (Linear Regression, Random Forest). Demonstrates a feature-engineering pipeline, splitting data into training and test sets, and calculating performance metrics (e.g., MSE).  
-   - **04 XGBoost with Dask (GPU).ipynb**  
-     Leverages GPU-accelerated XGBoost and Dask to handle large-scale data. Shows how to train gradient-boosted trees in a distributed environment, enabling faster experimentation on big datasets.
+1. **Multiple_Model_Framework/**  
+   - Contains multiple modeling approaches using various machine learning techniques.
+   - Includes an **Abstract Model Training Template** and **Weak Baselines** notebook.
+   - Stores partitioned pipeline outputs (**p1_pipeline_outputs, p2_pipeline_outputs, p3_pipeline_outputs**) for different subsets of the data.
+
+2. **Single_Model_Framework/**  
+   - **01_Data_Ingestion_and_Preprocessing.ipynb** – Loads the dataset, handles missing values, and prepares it for modeling.
+   - **02_EDA_and_Visualization.ipynb** – Conducts exploratory data analysis and visualizes key trends.
+   - **03_Modeling_and_Evaluation.ipynb** – Implements baseline models (Linear Regression, Random Forest) and evaluates their performance.
+   - **04_XGBoost_with_Dask_(GPU).ipynb** – Trains XGBoost using Dask for scalable, distributed learning.
+   - **05_CatBoost.ipynb** – Implements CatBoost for additional performance comparisons.
+
+3. **milestones/**  
+   - Contains milestone reports detailing the project’s progress:
+     - **Milestone 1:** Project Abstract with background and motivation.
+     - **Milestone 2:** Progress report on data pipeline and early modeling.
+     - **Milestone 3:** Presentation slides summarizing updates and findings.
 
 ---
 
@@ -84,12 +87,12 @@ Welcome to our Flight Fare Forecasting project! This repository explores predict
 
 - **Data Pipeline:**  
   - PySpark used for efficient ingestion and cleaning due to the dataset’s large size.  
-  - Feature engineering included extracting time-related features (day of week, month), handling missing distances, boolean feature encoding, and route-specific transformations.  
+  - Feature engineering included extracting time-related features (day of week, month), handling missing distances, boolean feature encoding, and route-specific transformations.
 - **Exploratory Data Analysis (EDA):**  
-  - Distribution of base fares vs. total fares, flight counts across different airports, seat availability, and ratio analysis.  
+  - Distribution of base fares vs. total fares, flight counts across different airports, seat availability, and ratio analysis.
 - **Models & Techniques:**  
   - **Linear Regression & Random Forest** for baseline modeling.  
-  - **Gradient Boosting (XGBoost, LightGBM)** for improved accuracy with structured data.  
+  - **Gradient Boosting (XGBoost and CatBoost)** for improved accuracy with structured data.  
   - **Distributed Training** (Dask + XGBoost on GPU) for scalability on large datasets.
 
 ### Current Findings
@@ -103,45 +106,38 @@ Welcome to our Flight Fare Forecasting project! This repository explores predict
 
 ## Getting Started
 
-1. **Clone the Repository**
+### 1. Clone the Repository
 
-   ```bash
-   git clone https://github.com/nikopastore/flight-fare-forecasting.git
-   cd flight-fare-forecasting
-2. **Download the Dataset**
+```bash
+git clone https://github.com/nikopastore/flight-fare-forecasting.git
+cd flight-fare-forecasting
+```
 
-    ```bash
-    kaggle datasets download -d dilwong/flightprices
-    unzip flightprices.zip
-  - Place the itineraries.csv file in a suitable location (the notebooks reference it directly).
+### 2. Download the Dataset
 
-3. **Environment Setup**
-  - **Recommended**: Use a Conda or virtual environment.
-  - **Key Libraries**:
-    - pyspark
-    - xgboost (with GPU support if available)
-    - dask[complete] (for distributed operations)
-    - pandas, numpy, matplotlib, seaborn, scikit-learn
-  - For GPU acceleration, ensure you have CUDA-compatible drivers and the correct version of XGBoost.
+```bash
+kaggle datasets download -d dilwong/flightprices
+unzip flightprices.zip
+```
+- Place the `itineraries.csv` file in a suitable location (the notebooks reference it directly).
 
-## 4. Running the Notebooks
+### 3. Environment Setup
 
-- **01 Data Ingestion and Preprocessing.ipynb**  
-  - Update file paths as needed.  
-  - Run cells sequentially; a cleaned CSV will be generated if you follow the pipeline.
+- **Recommended:** Use a Conda or virtual environment.
+- **Key Libraries:**
+  - `pyspark`
+  - `xgboost` (with GPU support if available)
+  - `dask[complete]` (for distributed operations)
+  - `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`
+- **GPU Acceleration:** Ensure you have CUDA-compatible drivers and the correct version of XGBoost.
 
-- **02 EDA and Visualization.ipynb**  
-  - Loads the same CSV.  
-  - Generates histograms, bar plots, and other EDA visuals.
+### 4. Running the Notebooks
 
-- **03 Modeling and Evaluation.ipynb**  
-  - Demonstrates feature engineering, train/test splitting, and training baseline models (Linear Regression, Random Forest).  
-  - Outputs MSE metrics for each approach.
+- **Single_Model_Framework/** notebooks provide a step-by-step approach to data preparation, visualization, and model training.
+  - Update file paths as needed before running.
 
-- **04 XGBoost with Dask (GPU).ipynb**  
-  - Requires GPU environment (e.g., Google Colab with GPU runtime or a local machine with CUDA).  
-  - Trains an XGBoost regressor in distributed fashion to handle large subsets of the data efficiently.
- 
+- **Multiple_Model_Framework/** notebooks contain additional model frameworks with partitioned training data.
+
 ---
 
 ## Milestone Reports
@@ -154,3 +150,7 @@ You can find our detailed milestone documents in the **milestones** folder:
 - **Milestone 2 - 1st Progress Report.pdf**  
   Includes progress on data pipeline, EDA, feature engineering, and initial modeling strategies, along with team contributions and risk mitigation plans.
 
+- **Milestone 3 Slides - 2nd Progress Report.pptx**  
+  Summarizes key updates, modeling improvements, and next steps.
+
+---
