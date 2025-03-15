@@ -6,7 +6,7 @@ Welcome to our Flight Fare Forecasting project! This repository explores predict
 
 ## Repository Structure
 
-plaintext
+
 .
 |
 +---Multiple_Model_Framework
@@ -108,14 +108,14 @@ plaintext
 
 ### 1. Clone the Repository
 
-bash
+
 git clone https://github.com/nikopastore/flight-fare-forecasting.git
 cd flight-fare-forecasting
 
 
 ### 2. Download the Dataset
 
-bash
+
 kaggle datasets download -d dilwong/flightprices
 unzip flightprices.zip
 
@@ -144,7 +144,9 @@ Test results are generated on a per-partition basis (reflected in "Table 1" in o
 1. Open our repo's "Multiple_Model_Framework" folder.
 2. To generate weak baseline results across all partitions, open the "Weak_Baselines.ipynb" notebook in Google Colab with a CPU runtime. This may take around 3-4 hours. To reduce runtime, one may generate weak baseline results for only a single data partition. To do this, navigate to the "Partition Selection" -> "Procedure" section, which contains only a single code cell. In this cell, manually adjust the partitions to be considered using the list variable named "pnos." E.g., to only evaluate data partition 1, set pnos = [1].
 3. To generate other model results for a given partition, open one of the pipeline output folders (e.g., "p1_pipeline_outputs") and download the relevant files.
-4. In the following example for partition 1, the following files would need to be downloaded: "PCA_part_1.tar.gz", "prePCA_part_1.tar.gz", "stats_1.npy". Analogous files would need to be downloaded if evaluating other partitions.
+4. In the following example for partition 1, the following files would need to be downloaded: "PCA_part_1.tar.gz", "prePCA_part_1.tar.gz", "stats_1.npy". nalogous files would need to be downloaded if evaluating other partitions. These files would need to be uploaded to the "content" folder of Google Colab. A new folder named "PCA" would also need to be created in the "content" folder in Colab, inside which the "stats_1.np" file would be placed.
+5. With this setup, proceed to download one of the available models under the "Multiple_Model_Framework" -> "p1_pipeline_outputs" folder in our GitHub repo. E.g., if evaluation of RandomForestRegression on partition 1 is desired, download "Partition1_RandomForestRegressor.ipynb" and upload it to the "content" folder in Colab.
+6. Proceed to run the notebook on Colab to generate test results; this will likely take several hours. Afterwards, basic statstics for prediction squared errors are output towards the end of the notebook. This reveals the mean squared error of predictions on the partitionn.
 
 ---
 ## Milestone Reports
