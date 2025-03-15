@@ -8,15 +8,45 @@ Welcome to our Flight Fare Forecasting project! This repository explores predict
 
 ```plaintext
 .
-├── milestones/
-│   ├── Milestone 1 - Jan 20 - Project Abstract.pdf
-│   └── Milestone 2 - Feb 2 - 1st Progress Report.pdf
-│
-└── notebooks/
-    ├── 01 Data Ingestion and Preprocessing.ipynb
-    ├── 02 EDA and Visualization.ipynb
-    ├── 03 Modeling and Evaluation.ipynb
-    └── 04 XGBoost with Dask (GPU).ipynb
+|
++---Multiple_Model_Framework
+|   |   Abstract_Model_Training_Template.ipynb
+|   |   Weak_Baselines.ipynb
+|   |
+|   +---p1_pipeline_outputs
+|   |       Partition1_First_Run.ipynb
+|   |       Partition1_LinearRegression.ipynb
+|   |       Partition1_RandomForestRegression.ipynb
+|   |       Partition1_XGBoost.ipynb
+|   |       PCA_part_1.tar.gz
+|   |       prePCA_part_1.tar.gz
+|   |       stats_1.npy
+|   |
+|   +---p2_pipeline_outputs
+|   |       Partition2_LinearRegression.ipynb
+|   |       Partition2_RandomForestRegression.ipynb
+|   |       PCA_part_2.tar.gz
+|   |       prePCA_part_2.tar.gz
+|   |       stats_2.npy
+|   |
+|   \---p3_pipeline_outputs
+|           Partition3_LinearRegression.ipynb
+|           Partition3_RandomForestRegression.ipynb
+|           PCA_part_3.tar.gz
+|           prePCA_part_3.tar.gz
+|           stats_3.npy
+|
++---Single_Model_Framework
+|       01_Data_Ingestion_and_Preprocessing.ipynb
+|       02_EDA_and_Visualization.ipynb
+|       03_Modeling_and_Evaluation.ipynb
+|       04_XGBoost_with_Dask_(GPU).ipynb
+|       05_CatBoost.ipynb
+\---milestones
+        Milestone 1 - Jan 20 - Project Abstract.pdf
+        Milestone 2 - Feb 2 - 1st Progress Report.pdf
+        Milestone 3 Slides - Feb 24 - 2nd Progress Report.pptx
+
 ```
 
 1. **milestones/**  
