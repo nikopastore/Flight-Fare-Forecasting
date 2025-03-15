@@ -132,7 +132,9 @@ unzip flightprices.zip
   - `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`
 - **GPU Acceleration:** Ensure you have CUDA-compatible drivers and the correct version of XGBoost.
 
-> **Note:** If you prefer to work with Google Colab, most notebooks can be executed on a regular CPU (preferably with high RAM). However, the XGBoost and CatBoost notebooks require a TPU or GPU environment for proper execution.
+> **Note 1:** If you prefer to work with Google Colab, most notebooks can be executed on a regular CPU (preferably with high RAM). However, the XGBoost and CatBoost notebooks require a TPU or GPU environment for proper execution.
+> 
+> **Note 2:** Running the notebooks locally in Jupyter may result in faster runtimes, depending on your device specifications.
 
 ---
 
