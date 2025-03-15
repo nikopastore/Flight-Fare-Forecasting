@@ -50,19 +50,19 @@ Welcome to our Flight Fare Forecasting project! This repository explores predict
 
 ### Folders and Contents
 
-1. **Multiple_Model_Framework/**  
+1. **Multiple_Model_Framework:**  
    - Contains multiple modeling approaches using various machine learning techniques.
    - Includes an **Abstract Model Training Template** and **Weak Baselines** notebook.
    - Stores partitioned pipeline outputs (**p1_pipeline_outputs, p2_pipeline_outputs, p3_pipeline_outputs**) for different subsets of the data.
 
-2. **Single_Model_Framework/**  
+2. **Single_Model_Framework:**  
    - **01_Data_Ingestion_and_Preprocessing.ipynb** – Loads the dataset, handles missing values, and prepares it for modeling.
    - **02_EDA_and_Visualization.ipynb** – Conducts exploratory data analysis and visualizes key trends.
    - **03_Modeling_and_Evaluation.ipynb** – Implements baseline models (Linear Regression, Random Forest) and evaluates their performance.
    - **04_XGBoost_with_Dask_(GPU).ipynb** – Trains XGBoost using Dask for scalable, distributed learning.
    - **05_CatBoost.ipynb** – Implements CatBoost for additional performance comparisons.
 
-3. **milestones/**  
+3. **Milestones:**  
    - Contains milestone reports detailing the project’s progress:
      - **Milestone 1:** Project Abstract with background and motivation.
      - **Milestone 2:** Progress report on data pipeline and early modeling.
