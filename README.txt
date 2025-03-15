@@ -6,6 +6,7 @@ Welcome to our Flight Fare Forecasting project! This repository explores predict
 
 ## Repository Structure
 
+plaintext
 .
 |
 +---Multiple_Model_Framework
@@ -46,6 +47,7 @@ Welcome to our Flight Fare Forecasting project! This repository explores predict
         Milestone 2 - Feb 2 - 1st Progress Report.pdf
         Milestone 3 Slides - Feb 24 - 2nd Progress Report.pptx
 
+
 ### Folders and Contents
 
 1. Multiple_Model_Framework:  
@@ -60,7 +62,7 @@ Welcome to our Flight Fare Forecasting project! This repository explores predict
    - 04_XGBoost_with_Dask_(GPU).ipynb – Trains XGBoost using Dask for scalable, distributed learning.
    - 05_CatBoost.ipynb – Implements CatBoost for additional performance comparisons.
 
-3. Milestones  
+3. Milestones:  
    - Contains milestone reports detailing the project’s progress:
      - Milestone 1: Project Abstract with background and motivation.
      - Milestone 2: Progress report on data pipeline and early modeling.
@@ -106,11 +108,14 @@ Welcome to our Flight Fare Forecasting project! This repository explores predict
 
 ### 1. Clone the Repository
 
+bash
 git clone https://github.com/nikopastore/flight-fare-forecasting.git
 cd flight-fare-forecasting
 
+
 ### 2. Download the Dataset
 
+bash
 kaggle datasets download -d dilwong/flightprices
 unzip flightprices.zip
 
@@ -132,7 +137,16 @@ unzip flightprices.zip
 > Note 2: Running the notebooks locally in Jupyter may result in faster runtimes, depending on your device specifications.
 
 ---
+## Instructions for Producing Test Results
 
+Test results are generated on a per-partition basis (reflected in "Table 1" in our report). To produce the results for a given partition, follow these steps:
+
+1. Open our repo's "Multiple_Model_Framework" folder.
+2. To generate weak baseline results across all partitions, open the "Weak_Baselines.ipynb" notebook in Google Colab with a CPU runtime. This may take around 3-4 hours. To reduce runtime, one may generate weak baseline results for only a single data partition. To do this, navigate to the "Partition Selection" -> "Procedure" section, which contains only a single code cell. In this cell, manually adjust the partitions to be considered using the list variable named "pnos." E.g., to only evaluate data partition 1, set pnos = [1].
+3. To generate other model results for a given partition, open one of the pipeline output folders (e.g., "p1_pipeline_outputs") and download the relevant files.
+4. In the following example for partition 1, the following files would need to be downloaded: "PCA_part_1.tar.gz", "prePCA_part_1.tar.gz", "stats_1.npy". Analogous files would need to be downloaded if evaluating other partitions.
+
+---
 ## Milestone Reports
 
 You can find our detailed milestone documents in the milestones folder:
